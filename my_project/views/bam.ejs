@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台管理</title>
+    <link rel='stylesheet' href='/stylesheets/bam.css' />
+</head>
+<body>
+<!-- head  -->
+	<div class="head"></div>
+<!-- body -->
+	<div class="bam_content">
+		<div class="con_menu">
+			<div class="menu_title">
+				<h3>导航菜单</h3>
+			</div>
+			<ul>
+				<div class="clearfix menu_name" id="menuName">
+					商品管理
+					<ul class="menu_wrap">
+						<li class="menu_item"><a href="javascript:;">商品列表</a></li>
+						<li class="menu_item"><a href="javascript:;">添加新商品</a></li>
+						<li class="menu_item"><a href="javascript:;">商品分类</a></li>
+						<li class="menu_item"><a href="javascript:;">用户评论</a></li>
+						<li class="menu_item"><a href="javascript:;">商品品牌</a></li>
+						<li class="menu_item"><a href="javascript:;">商品类型</a></li>
+						
+					</ul>
+				</div>
+				<div class="clearfix menu_name" id="menuName">促销管理
+					<ul class="menu_wrap">
+						<li class="menu_item"><a href="javascript:;">夺宝奇兵</a></li>
+					</ul>
+				</div>
+				<div class="clearfix menu_name" id="menuName">订单管理</div>
+				<div class="clearfix menu_name" id="menuName">广告管理</div>
+				<div class="clearfix menu_name" id="menuName">报表统计</div>
+				<div class="clearfix menu_name" id="menuName">文章管理</div>
+				<div class="clearfix menu_name" id="menuName">会员管理</div>
+				<div class="clearfix menu_name" id="menuName">权限管理</div>
+				<div class="clearfix menu_name" id="menuName">系统设置</div>
+				<div class="clearfix menu_name" id="menuName">促销管理</div>
+				<div class="clearfix menu_name" id="menuName">模板管理</div>
+				<div class="clearfix menu_name" id="menuName">数据库管理</div>
+				<div class="clearfix menu_name" id="menuName">短信管理</div>
+				<div class="clearfix menu_name" id="menuName">邮件群发管理</div>
+				<div class="clearfix menu_name" id="menuName">移动版管理</div>
+				<div class="clearfix menu_name" id="menuName">模板堂知识库</div>
+			</ul>
+		</div>
+		<div class="con_right">
+			
+		</div>
+	</div>
+</body>
+</html>
+<script src="javascripts/public.js"></script>
+<script src="javascripts/jquery-1.11.1.min.js"></script>
+<script>
+	var flag=true;
+	console.log($(".menu_name").length)
+		$(".menu_name").click(function(){
+				for(var i=0;i<$(".menu_name").length;i++){
+						$(".menu_name").css("background-image","url(images/menu_1.png)");
+						$(".menu_name").children().css("display","none");
+						}
+				if(flag==true){
+					    $(this).css("background-image","url(images/menu1_1.png)");
+						$(this).children().css("display","block");
+						flag=false;
+				}else{
+						$(this).css("background-image","url(images/menu_1.png)"); 
+						$(this).children().css("display","none");
+						flag=true;
+				}
+		})
+</script>

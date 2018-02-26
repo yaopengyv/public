@@ -1,0 +1,29 @@
+header,html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,input,figure{margin:0;padding:0}
+body{font-family: "微软雅黑";height:800px;overflow: hidden;}
+ul,ol,li{list-style:none;}
+b,strong{font-weight:100;}
+em,i{font-style:normal;}
+h1,h2,h3,h4,h5,h6{font-weight:100;font-size:16px;}
+a,u{text-decoration: none;}
+input,select{outline:none;border:0;}
+img{display:block;border:0;}
+.clearfix:after{content:".";clear:both;display:block;height:0;overflow: hidden;visibility: hidden;}
+.clearfix{zoom:1;}
+
+
+.login_body{display:block;height:100%;width:100%;background:#555 url(../images/ecshop-bg.png) no-repeat center center;background-size: cover;position:relative;}
+.login_hd{height:44px;padding:40px 0 40px 50px;}
+.center_wrap{background:;position:absolute;top:18%;right:0;left:0;width:475px;height:507px;margin:auto auto;}
+.title{width:380px;margin:0 auto;}
+.title img{height:65px;width:248px;margin-left:66px;}
+.login_start{height:350px;position:relative;overflow:hidden;padding-bottom: 42px;margin-top: 50px;background:url(../images/icloud-bar.png) no-repeat 0 bottom;}
+.login_input{position:absolute;left:16px;z-index: 2;width:302px;height:322px;background: rgba(255,255,255,.85);color:#A1A1A1;padding:5px 70px 25px;overflow:hidden;}
+.login_input h3{margin:18px 0;padding-bottom:10px;text-align:center;}
+.first,.second,.third{border-radius: 5px 5px 5px 5px;border: 1px solid #ddd;height:51px;}
+.second,.third{border-top: 0;}
+.first input,.second input,.third input{padding:1px 0 1px 50px;height:48px;width:250px;background:#fff;color:#8a8a8a;line-height: 48px;border-radius: 5px 5px 5px 5px;}
+.first input{background:#fff url(../images/longin-logo_03.jpg) no-repeat 15px 14px;}
+.second input{background:#fff url(../images/longin-logo_06.jpg) no-repeat 15px 14px;}
+.third input{background:#fff url(../images/longin-logo_08.jpg) no-repeat 15px 14px;}
+.last{width:302px;height:51px;position: relative;}
+.last input{display:block;height:;cursor:pointer;margin-top:20px;width:100%;font-size: 16px;line-height: 51px;text-align: center;background:#fc7878;color:#fff;border-radius: 4px}
