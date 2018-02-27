@@ -77,6 +77,7 @@ img{display:block;border:0;}
 /* .tab_div .tabtop_div p span:hover{background-color: #fff;} */
 
 /*right_body_content 1 (ADD GOODS)*/
+.sttle{background:#fff;}
 .tab_div .tabbody_div{padding:10px;background: #fefefe;min-height:300px;}
 .tabbody_div form{display: block;}
 .tabbody_div form table{width:90%;margin:0 auto;}
@@ -104,7 +105,7 @@ img{display:block;border:0;}
 .button_div{text-align: center;padding: 3px 0;}
 .button{padding:5px 15px 5px;margin:2px 2px;background: #ff3f3f;color:#fff;cursor: pointer;border-radius: 3px;font-size: 12px;border:0;}
 /*right_body_content 2 (GOODS LIST)*/
-/*.goods_list{padding:10px;background: #fefefe;min-height:300px;}*/
+.goods_list{display: block}
 .form_div{background: #f3f3f3 url("../images/th_bg.gif") repeat-x;border:1px solid #ddd;padding:5px;color:#808080;margin-bottom: 10px;}
 .form_div form{height:30px;font-size:12px;}
 .form_div form img{vertical-align: middle;width:26px;height:22px;display: inline-block;}
@@ -127,6 +128,7 @@ img{display:block;border:0;}
 #page-link{margin-left: 1em;padding-left: 1em;border-left: 1px solid #999}
 #page-link a{color:#192E32;}
 #page-link a:hover{color: #9D7250;text-decoration: underline;}
+iframe{width:100%;min-height:150%;overflow: auto;}
 /*right_foot_content*/
 .tabfoot_div{background: #f3f3f3 url("../images/th_bg.gif") repeat-x;border:1px solid #ddd;padding: 15px;color: #9CACAF;margin:10px 0;text-align: center;font-size: 12px;}
 

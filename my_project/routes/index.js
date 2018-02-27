@@ -8,5 +8,11 @@ router.get('/', function(req, res, next) {
 router.get('/index', function(req, res, next) {
   res.render('bam', { title: '后台管理页面' });
 });
+router.get('/addgoods', function(req, res, next) {
+  res.render('addgoods', { title: '添加商品' });
+});
+router.get('/goodslist', function(req, res, next) {
+  res.render('goodslist', { title: '商品列表' });
+});
 
 module.exports = router;

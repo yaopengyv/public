@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="/stylesheets/bam.css">
+</head>
+<body>
+<div class="right_top">
+				<span class="action-span"><a href="javascript:;">商品列表</a></span>
+				<span class="action-span1"><a href="javascript:;">ECSHOP 管理中心</a></span>
+				<span class="newgoods">- 添加新商品</span>
+				<span class="help_sub"><a href="javascript:;" title="添加新商品帮助文档"><img src="images/jnsy.png" alt=""></a></span>
+			</div>
+	<div class="tab_div">
+					<div class="tabtop_div">
+						<p>
+							<span class="bg_click">通用信息</span>
+							<span class="bg_click">详细描述</span>
+							<span class="bg_click">其他信息</span>
+							<span class="bg_click">商品属性</span>
+							<span class="bg_click">商品相册</span>
+							<span class="bg_click">关联商品</span>
+							<span class="bg_click">配件</span>
+							<span class="bg_click">关联文章</span>
+						</p>
+					</div>
+					<!-- 通用信息 -->
+					<div class="tabbody_div clearfix">
+						<form action="" method="post">
+							<table id="general-table">
+								<tr>
+									<td class="label">商品名称:</td>
+									<td><input type="text"></td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										商品货号:
+									</td>
+									<td>
+										<input type="text">
+										<span class="public_span">如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>	
+									</td>
+								</tr>
+								<tr>
+									<td class="label">商品分类:</td>
+									<td>
+										<select name="cat_id" id="select1" style="width:156px">
+											<option value="0">请选择...</option>
+											<option value="0">钻石</option>
+											<option value="0">鞋子</option>
+											<option value="0">夹克</option>
+											<option value="0">风衣</option>
+											<option value="0">马丁靴</option>
+										</select>
+										<a href="javascript:;" class="btn_last">添加分类</a>
+										<span class="star">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="label">扩展分类:</td>
+									<td>
+										<input type="button" class="button" value="添加">
+									</td>
+								</tr>
+								<tr>
+									<td class="label">商品品牌:</td>
+									<td>
+										<select name="cat_id" id="select2">
+											<option value="0">请选择...</option>
+											<option value="0">wowowo</option>
+											<option value="0">城堡</option>
+											<option value="0">安徒生</option>
+											<option value="0">卖女孩的小火柴</option>
+											<option value="0">路飞</option>
+										</select>
+										<a href="javascript:;" class="btn_last">添加品牌</a>
+									</td>
+								</tr>
+								<tr>
+									<td class="label">本店售价:</td>
+									<td>
+										<input type="text" placeholder="0" style="width:131px">
+										<input type="button" value="按市场价计算" class="btn_sc">
+										<span class="star">*</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										会员价格:
+									</td>
+									<td class="goods_price">
+										注册用户
+										<input type="text" placeholder="-1" id="price_inp">
+										代销用户
+										<input type="text" placeholder="-1" id="price_inp">
+										vip
+										<input type="text" placeholder="-1" id="price_inp">
+										<span class="public_span">会员价格为-1时表示会员价格按会员等级折扣率计算。你也可以为每个等级指定一个固定价格</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										商品优惠价格:
+									</td>
+									<td class="goods_price">
+										[+] 优惠数量 <input type="text" class="price1_inp">
+										 优惠价格 <input type="text" class="price1_inp">
+										<span class="public_span">购买数量达到优惠数量时享受的优惠价格</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="label">市场售价:</td>
+									<td>
+										<input type="text" placeholder="0" class="st_price input_same">
+										<input type="button" value="取整数" class="int_num ">
+									</td>
+								</tr>
+								<tr>
+									<td class="label">虚拟销量:</td>
+									<td>
+										<input type="text" placeholder="0" class="sales_num nput_same">
+									</td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										赠送消费积分数:
+				
+									</td>
+									<td>
+										<input type="text" class="input_same" placeholder="-1">
+										<span class="public_span">购买该商品时赠送消费积分数,-1表示按商品价格赠送</span>
+				
+									</td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										赠送等级积分数:
+									</td>
+									<td>
+										<input type="text" class="input_same" placeholder="-1">
+										<span class="public_span">购买该商品时赠送等级积分数,-1表示按商品价格赠送</span>
+										
+									</td>
+								</tr>
+								<tr>
+									<td class="label">
+										<a href="javascript:;"><img src="images/notice.gif" alt=""></a>
+										积分购买金额:
+				
+									</td>
+									<td>
+											
+										<input type="text" class="input_same" placeholder="0">
+										<span class="public_span">(此处需填写金额)购买该商品时最多可以使用积分的金额</span>
+				
+									</td>
+								</tr>
+								<tr>
+									<td class="label"><input type="checkbox" id="is_promote">促销价:</td>
+									<td><input type="text" class="prom_price input_same " placeholder="0"></td>
+								</tr>
+								<tr>
+									<td class="label">促销日期:</td>
+									<td>
+										<input type="text" value="2017-02-27" id="date_input">
+										<input type="button" class="select" value="选择">-
+										<input type="text" value="2017-03-26" id="date_input">
+										<input type="button" class="select" value="选择">
+									</td>
+								</tr>
+								<tr>
+									<td class="label">上传商品图片:</td>
+									<td>
+										<input type="file" value="选择文件" style="font-size: 12px"><br/>
+										<input type="text" value="商品图片外部URL" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" style="color:#666">
+									</td>
+								</tr>
+								<tr>
+									<td class="label">上传商品缩略图:</td>
+									<td>
+										<input type="file" value="选择文件" style="font-size: 12px"><br/>
+										<input type="text" value="商品图片外部URL" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" style="color:#666"  disabled><br/>
+										<input type="checkbox"><span style="font-size: 12px">自动生成商品缩略图</span>
+									</td>
+								</tr>
+							</table>
+							<div class="button_div">
+								<input type="button" value="确定" class="Y_btn button">
+								<input type="button" value="重置" class="clear_btn button">
+							</div>
+						</form>
+					</div>
+					<!-- 详细描述 -->
+					<div class="tabbody_div clearfix" style="display: none;">
+						详细描述
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						其他信息
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						商品属性
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						商品相册
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						关联商品
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						配件
+					</div>
+					<div class="tabbody_div clearfix" style="display: none;">
+						关联文章
+					</div>
+
+				</div> 
+				<div class="tabfoot_div">
+					共执行 9 个查询，用时 0.026666 秒，Gzip 已禁用，内存占用 3.580 MB<br/>
+					版权所有 © 2005-2018 上海商派软件有限公司，并保留所有权利。
+			</div>
+</body>
+</html>
+<script src="javascripts/public.js"></script>
+<script src="javascripts/jquery-1.11.1.min.js"></script>
+<script>
+		var title_con=document.getElementsByClassName("bg_click");
+		//console.log(title_con.length)
+		var content_con=document.getElementsByClassName("tabbody_div");
+		//console.log(content_con.length)
+
+					for(let i=0;i<title_con.length;i++){
+						title_con[i].onclick=function(){
+							//console.log(i);
+							for(var j=0;j<content_con.length;j++){
+								content_con[j].style.display="none";
+								title_con[j].style.background="#efefef";
+							}
+							this.style.background="#fff";
+							content_con[i].style.display="block";
+						}
+					}
+</script>
