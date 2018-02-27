@@ -332,16 +332,13 @@
 	var flag=true;
 		$(".menu_name").click(function(e){
 				var e=e||event;
-				e.stopPropagation ? e.stopPropagation() : e.cancleBubble=true;
-				/*if(flag==true){*/
+				if($(this).children().css("display")=="none"){
 					    $(this).css("background-image","url(images/menu1_1.png)");
 						$(this).children().css("display","block");
-						// flag=false;
-				/*}else{*/
-						/*$(this).css("background-image","url(images/menu_1.png)"); 
+				}else{
+						$(this).css("background-image","url(images/menu_1.png)"); 
 						$(this).children().css("display","none");
-						flag=true;*/
-			/*	}*/
+			}
 		})
 		
 	
