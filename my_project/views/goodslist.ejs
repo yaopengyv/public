@@ -73,7 +73,7 @@
 								<%for(var i=0;i<list.length;i++){%>
 								<tr>
 									<td>
-										<input type="checkbox">260
+										<input type="checkbox">200
 									</td>
 									<td>
 										<span class="first-cell"><%= list[i].goods_Name%></span>
@@ -103,13 +103,13 @@
 										<span>1</span>
 									</td>
 									<td>
-										<span>0</span>
+										<span><%= list[i].sales_count%></span>
 									</td>
 									<td>
 										<a href="javascript:;"><img src="images/icon_view.gif" width="21" height="21" alt=""></a>
 										<a href="javascript:;"><img src="images/icon_edit.gif" width="21" height="21" alt=""></a></a>
 										<a href="javascript:;"><img src="images/icon_copy.gif" width="21" height="21" alt=""></a></a>
-										<a href="javascript:;"><img src="images/icon_trash.gif" width="21" height="21" alt=""></a></a>
+										<a href="javascript:;"><img src="images/icon_trash.gif" width="21" height="21" alt="" class="goods_remove" id="goods_remove"></a></a>
 									</td>
 								</tr>
 								<%}%>
@@ -159,3 +159,10 @@
 			</div>
 </body>
 </html>
+<script src="javascripts/public.js"></script>
+<script src="javascripts/jquery-1.11.1.min.js"></script>
+<script>
+	$("#goods_remove").click(function(){
+
+	})
+</script>

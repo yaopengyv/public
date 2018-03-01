@@ -15,13 +15,13 @@ router.get('/index', function(req, res, next) {
 router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加商品' });
 });
-router.get('/goodslist', function(req, res, next) {
+router.get('/goodslist', function(req, res) {
 
   goodsModel.find({},function(err, docs) {
-		res.render("goods_list", {list: docs});
+		res.render("goodslist", {list: docs});
 	})
 });
-/*router.get('/index', function(req, res){
+router.get('/index', function(req, res){
 	// 检查用户是否登录
 	if(req.session && req.session.username != null) {
 		res.render("/index", {});
@@ -30,7 +30,7 @@ router.get('/goodslist', function(req, res, next) {
 		res.redirect('/login');
 	}
 })
-*/
+
 router.post('/xiangmu/userlogin', function(req, res) {
   var username = req.body.username;
 	var psw = req.body.psw;
