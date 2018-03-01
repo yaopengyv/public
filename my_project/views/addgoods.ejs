@@ -28,11 +28,11 @@
 					</div>
 					<!-- 通用信息 -->
 					<div class="tabbody_div clearfix">
-						<form action="" method="post">
+						<form id="frm" action="/api/add_Goods" method="post" enctype="multipart/form-data">
 							<table id="general-table">
 								<tr>
 									<td class="label">商品名称:</td>
-									<td><input type="text"></td>
+									<td><input type="text"  name="goods_Name" ></td>
 								</tr>
 								<tr>
 									<td class="label">
@@ -40,7 +40,7 @@
 										商品货号:
 									</td>
 									<td>
-										<input type="text">
+										<input type="text" name="art_num" >
 										<span class="public_span">如果您不输入商品货号，系统将自动生成一个唯一的货号。</span>	
 									</td>
 								</tr>
@@ -82,7 +82,7 @@
 								<tr>
 									<td class="label">本店售价:</td>
 									<td>
-										<input type="text" placeholder="0" style="width:131px">
+										<input type="text" placeholder="0" style="width:131px" name="shop_price">
 										<input type="button" value="按市场价计算" class="btn_sc">
 										<span class="star">*</span>
 									</td>
@@ -123,7 +123,7 @@
 								<tr>
 									<td class="label">虚拟销量:</td>
 									<td>
-										<input type="text" placeholder="0" class="sales_num nput_same">
+										<input type="text" placeholder="0" class="sales_num nput_same sales_count" name="sales_count">
 									</td>
 								</tr>
 								<tr>
@@ -178,7 +178,7 @@
 								<tr>
 									<td class="label">上传商品图片:</td>
 									<td>
-										<input type="file" value="选择文件" style="font-size: 12px"><br/>
+										<input type="file" value="选择文件" style="font-size: 12px" name="img"><br/>
 										<input type="text" value="商品图片外部URL" onfocus="if (this.value == '商品图片外部URL'){this.value='http://';this.style.color='#000';}" style="color:#666">
 									</td>
 								</tr>
@@ -192,8 +192,8 @@
 								</tr>
 							</table>
 							<div class="button_div">
-								<input type="button" value="确定" class="Y_btn button">
-								<input type="button" value="重置" class="clear_btn button">
+								<input type="button" value="确定" class="Y_btn button" id="Y_btn" onclick="addGoods()">
+								<input type="button" value="重置" class="clear_btn button" >
 							</div>
 						</form>
 					</div>
@@ -246,4 +246,9 @@
 							content_con[i].style.display="block";
 						}
 					}
+
+	function addGoods() {
+		$id("frm").submit();
+		alert();
+	}
 </script>

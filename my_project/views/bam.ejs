@@ -151,7 +151,6 @@
 		$(".menu_name").click(function(e){
 				var e=e||event;
 				var pd=$(this).children().css("display");
-
 				if(pd=="none"){
 					    $(this).css("background-image","url(images/menu1_1.png)");
 						$(this).children().css("display","block");
@@ -160,7 +159,6 @@
 						$(this).children().css("display","none");
 			}
 		})
-
 		$(".menu_name").children().click(function(e){
 				var e=e||event;
 					e.stopPropagation ? e.stopPropagation() : e.cancleBubble=true;
