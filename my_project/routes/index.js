@@ -16,10 +16,16 @@ router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加商品' });
 });
 router.get('/goodslist', function(req, res) {
-
-  goodsModel.find({},function(err, docs) {
-		res.render("goodslist", {list: docs});
-	})
+		var pageNo=parseInt(req.query.pageNo||1);
+		// console.log(pageNo)
+		var count=parseInt(req.query.count||15);
+		var query= goodsModel.find({}).skip((pageNo-1)*count).limit(count).sort({create_date:1});
+		query.exec(function(err, docs) {
+			res.render("goodslist", {list: docs,pageNo:pageNo,count:count});
+		})
+ //  goodsModel.find({},function(err, docs) {
+	// 	res.render("goodslist", {list: docs});
+	// })
 });
 router.get('/index', function(req, res){
 	// 检查用户是否登录

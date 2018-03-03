@@ -124,11 +124,14 @@
 											个记录分为
 											<span id="page_count">3</span>
 											页,每页
-											<input type="text" id="pageSize" value="15">
+											<input type="text" id="pageSize" value="<%= count%>">
 											<span id="page-link">
 												<a href="javascript:;">第一页</a>
-												<a href="javascript:;">上一页</a>
-												<a href="javascript:;">下一页</a>
+												<%if(pageNo>1){%>
+												<a href="goodslist?pageNo=<%= pageNo-1%>&count=<%= count%>#">上一页</a>
+												<%}%>
+												<a href="goodslist?pageNo=<%= pageNo+1%>&count=<%= count%>#">下一页</a>
+
 												<a href="javascript:;">最末页</a>
 												<select name="" id="gotopage">
 													<option value="">1</option>
