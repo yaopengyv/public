@@ -21,7 +21,7 @@ router.get('/index', function(req, res, next) {
 router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加商品' });
 });
-router.get('/goodslist', function(req, res) {
+router.get('/goodslist', function(req, res ,next) {
 		var pageNo=parseInt(req.query.pageNo||1);
 		// console.log(pageNo)
 		var count=parseInt(req.query.count||10);
@@ -29,7 +29,25 @@ router.get('/goodslist', function(req, res) {
 		query.exec(function(err, docs) {
 			res.render("goodslist", {list: docs,pageNo:pageNo,count:count});
 		})
+
+	/*	var gs_num=goodsModel.find({});
+		gs_num.exec(function(err, docs) {
+			res.render("goodslist", {list: docs,pageNo:pageNo,count:count});
+		})*/
+	
 });
+router.get('/api/list',function(req,res,next){
+		var select_name=req.query.select_fl;
+				// console.log(select_name);
+					goodsModel.find({goods_Name:{$regex:select_name}},function(err, docs) {
+
+						console.log(docs);
+						console.log(err);
+						// res.render("goodslist", {list: docs});
+						res.send(docs)
+				})
+
+})
 router.get('/goods_del', function(req, res, next) {
 	goodsModel.findByIdAndRemove({_id:req.query.gid},function(err){
 			var result = {
@@ -45,16 +63,6 @@ router.get('/goods_del', function(req, res, next) {
 	})
 });
 
-
-/*router.get('/index', function(req, res){
-	// 检查用户是否登录
-	if(req.session && req.session.username != null) {
-		res.render("/index", {});
-	} else {
-		// 重定向
-		res.redirect('/login');
-	}
-})*/
 
 router.post('/xiangmu/userlogin', function(req, res) {
   var username = req.body.username;
@@ -77,11 +85,20 @@ router.post('/xiangmu/userlogin', function(req, res) {
 		}
 	})
 });
-router.post('/query',function(req,res){
-			var select_name=req.body.select_fl;
-			console.log(select_name);
-			goodsModel.find({goods_Name: new RegExp(select_name)});
-})
+
+
+
+/*router.get('/query',function(req,res){
+			var select_name=req.query.select_fl;
+			// console.log(select_name);
+				goodsModel.find({goods_Name:{$regex:select_name}},function(err, docs) {
+					console.log(docs);
+				res.render("goodslist", {list: docs});
+			})
+})*/
+
+
+
 router.post('/api/add_Goods',function(req,res){
 		var Form = new multiparty.Form({
 			uploadDir: "./public/images"

@@ -62,7 +62,8 @@ img{display:block;border:0;}
 .bam_content .con_menu .menu_wrap .menu_item a:hover{background-color: #797979;color:#fff;}
 
 /*right_content*/
-.bam_content .con_right{position: absolute;left:185px;top:118px;right:0;bottom: 0;background:url(../images/body_bj.jpg);overflow: auto;padding: 10px;min-width:773px;padding-left:20px;}
+.bam_content .con_right{position: absolute;left:185px;top:120px;right:0;bottom: 0;background:url(../images/body_bj.jpg);overflow: auto;padding: 10px;min-width:773px;padding-left:20px;}
+	iframe{width:100%;min-height:150%;}
 .bam_content .con_right .right_top{height:26px;width:1192px;border-bottom: 1px solid #ccc;padding:7px 10px;margin-bottom:10px;overflow: hidden}
 .action-span a{display:block;float:right;height:26px;line-height:26px;padding:0 10px 0 23px;background: #c43926 url(../images/icon_add02.gif) no-repeat 6px center;border-radius: 3px;color:#fff;font-size:13px;text-align: center;cursor: pointer;}
 .action-span1 a{color:#333;font-size:18px;}
@@ -106,9 +107,9 @@ img{display:block;border:0;}
 .button{padding:5px 15px 5px;margin:2px 2px;background: #ff3f3f;color:#fff;cursor: pointer;border-radius: 3px;font-size: 12px;border:0;}
 /*right_body_content 2 (GOODS LIST)*/
 .goods_list{display: block}
-.form_div{background: #f3f3f3 url("../images/th_bg.gif") repeat-x;border:1px solid #ddd;padding:5px;color:#808080;margin-bottom: 10px;}
+.form_div{background: #f3f3f3 url("../images/th_bg.gif") repeat-x;border:1px solid #ddd;padding:5px;color:#808080;margin-bottom: 10px;margin-top:10px}
 .form_div form{height:30px;font-size:12px;}
-.form_div form img{vertical-align: middle;width:26px;height:22px;display: inline-block;}
+.form_div  img{vertical-align: middle;width:26px;height:22px;display: inline;}
 .list-div{width:100%;}
 .list-div table{width:100%;background: #ddd;}
 .list-div table:first-child:first-child img{display: inline-block;}
@@ -128,7 +129,7 @@ img{display:block;border:0;}
 #page-link{margin-left: 1em;padding-left: 1em;border-left: 1px solid #999}
 #page-link a{color:#192E32;}
 #page-link a:hover{color: #9D7250;text-decoration: underline;}
-iframe{width:100%;min-height:150%;overflow: auto;}
+
 /*right_foot_content*/
 .tabfoot_div{background: #f3f3f3 url("../images/th_bg.gif") repeat-x;border:1px solid #ddd;padding: 15px;color: #9CACAF;margin:10px 0;text-align: center;font-size: 12px;}
 
