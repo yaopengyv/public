@@ -51,6 +51,11 @@ router.post('/xiangmu/userlogin', function(req, res) {
 		}
 	})
 });
+router.post('/query',function(req,res){
+			var select_name=req.body.select_fl;
+			console.log(select_name);
+			goodsModel.find({goods_Name: new RegExp(select_name)});
+})
 router.post('/api/add_Goods',function(req,res){
 		var Form = new multiparty.Form({
 			uploadDir: "./public/images"
@@ -59,7 +64,7 @@ router.post('/api/add_Goods',function(req,res){
 		var goods_Name =body.goods_Name[0];
 		var art_num =body.art_num[0];
 		var shop_price=body.shop_price[0];
-		var sales_count=body.sales_count[0]; 
+		var sales_count=body.sales_count[0];
 		var imgName = files.img[0].path;
 		imgName = imgName.substr(imgName.lastIndexOf("\\") + 1);
 

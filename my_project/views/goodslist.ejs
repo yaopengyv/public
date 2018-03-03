@@ -15,7 +15,7 @@
 		<!-- div2 goods list -->
 				<div class="goods_list clearfix">
 					<div class="form_div">
-						<form action="">
+						<!-- <form action=""> -->
 							<img src="images/icon_search.gif" alt="">
 							<select name="cat_id" id="">
 								<option value="">所有分类</option>
@@ -45,9 +45,10 @@
 								<option value="">下架</option>
 							</select>
 							关键字
-							<input type="text" style="width:100px">
-							<input type="submit" value="搜索" class="button">
-						</form>
+							<input type="text" name="select_fl" style="width:100px">
+							<input type="button" onclick="submitf()" value="搜索" id="button" class="button">
+							
+						<!-- </form> -->
 					</div>
 					<form action="">
 						<div class="list-div">
@@ -162,7 +163,16 @@
 <script src="javascripts/public.js"></script>
 <script src="javascripts/jquery-1.11.1.min.js"></script>
 <script>
-	$("#goods_remove").click(function(){
-
-	})
+		function submitf() {
+		$.ajax({
+			url: "/query",
+			type: "post",
+			data: {
+				select_fl: $("#button").val(),
+			},
+			success: function(res) {
+				console.log(res);
+			}
+		})
+	}
 </script>
