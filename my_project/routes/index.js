@@ -10,7 +10,13 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: '登录页面' });
 });
 router.get('/index', function(req, res, next) {
-  res.render('bam', { title: '后台管理页面' });
+	if(req.session && req.session.username != null) {
+  		res.render('bam', { title: '后台管理页面' });
+	} else {
+		// 重定向
+		res.redirect('/login');
+	}
+
 });
 router.get('/addgoods', function(req, res, next) {
   res.render('addgoods', { title: '添加商品' });
@@ -18,16 +24,29 @@ router.get('/addgoods', function(req, res, next) {
 router.get('/goodslist', function(req, res) {
 		var pageNo=parseInt(req.query.pageNo||1);
 		// console.log(pageNo)
-		var count=parseInt(req.query.count||15);
+		var count=parseInt(req.query.count||10);
 		var query= goodsModel.find({}).skip((pageNo-1)*count).limit(count).sort({create_date:1});
 		query.exec(function(err, docs) {
 			res.render("goodslist", {list: docs,pageNo:pageNo,count:count});
 		})
- //  goodsModel.find({},function(err, docs) {
-	// 	res.render("goodslist", {list: docs});
-	// })
 });
-router.get('/index', function(req, res){
+router.get('/goods_del', function(req, res, next) {
+	goodsModel.findByIdAndRemove({_id:req.query.gid},function(err){
+			var result = {
+				status: 1,
+				message: "商品删除成功"
+			};
+
+			if(err){
+				result.status=-100;
+				result.message="商品删除失败";
+			}
+			res.send(result);
+	})
+});
+
+
+/*router.get('/index', function(req, res){
 	// 检查用户是否登录
 	if(req.session && req.session.username != null) {
 		res.render("/index", {});
@@ -35,7 +54,7 @@ router.get('/index', function(req, res){
 		// 重定向
 		res.redirect('/login');
 	}
-})
+})*/
 
 router.post('/xiangmu/userlogin', function(req, res) {
   var username = req.body.username;
@@ -47,6 +66,7 @@ router.post('/xiangmu/userlogin', function(req, res) {
 	}
 	UserModel.find({username: username, psw: psw}, function(err, docs){
 		if(!err && docs.length > 0) {
+			req.session.username=username;
 			console.log("登录成功");
 			res.send(result);
 		} else {

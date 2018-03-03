@@ -110,7 +110,7 @@
 										<a href="javascript:;"><img src="images/icon_view.gif" width="21" height="21" alt=""></a>
 										<a href="javascript:;"><img src="images/icon_edit.gif" width="21" height="21" alt=""></a></a>
 										<a href="javascript:;"><img src="images/icon_copy.gif" width="21" height="21" alt=""></a></a>
-										<a href="javascript:;"><img src="images/icon_trash.gif" width="21" height="21" alt="" class="goods_remove" id="goods_remove"></a></a>
+										<a href="javascript:;"><img src="images/icon_trash.gif" width="21" height="21" alt="" class="goods_remove" id="goods_remove" onclick="del('<%= list[i]._id%>')"></a></a>
 									</td>
 								</tr>
 								<%}%>
@@ -124,7 +124,7 @@
 											个记录分为
 											<span id="page_count">3</span>
 											页,每页
-											<input type="text" id="pageSize" value="<%= count%>">
+											<input type="text" id="pageSize" value="<%= %>">
 											<span id="page-link">
 												<a href="javascript:;">第一页</a>
 												<%if(pageNo>1){%>
@@ -176,6 +176,25 @@
 			success: function(res) {
 				console.log(res);
 			}
+		})
+	}
+
+	function del(id){
+		$.ajax({
+			url:"/goods_del",
+			type:"get",
+			data: {
+				gid:id
+			},
+			success:function(res){
+				console.log(res);
+				if(res.status==1){
+					location.reload();
+				}else{
+					console.log(res.message)
+				}
+			}
+
 		})
 	}
 </script>
